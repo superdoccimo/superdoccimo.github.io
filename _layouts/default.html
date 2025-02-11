@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ page.lang | default: 'en' }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="g9fJsz9TfgVsXUpNZvY3Lm5dz-feSSbTv5przopaBiA" />
   <title>{{ page.title }}</title>
-  <!-- 必要ならCSSなどもここに読み込む -->
+  <!-- CSSファイルの読み込み -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  {{ content }}
+  <!-- ナビゲーションバー（言語切替リンク付き） -->
+  <nav>
+    <ul>
+      <li><a href="{{ '/' | relative_url }}">English</a></li>
+      <li><a href="{{ '/ja/' | relative_url }}">日本語</a></li>
+    </ul>
+  </nav>
+
+  <!-- ページ固有のコンテンツ -->
+  <div class="content">
+    {{ content }}
+  </div>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }} Superdoccimo. All rights reserved.</p>
+  </footer>
 </body>
 </html>
