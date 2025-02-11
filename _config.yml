@@ -1,2 +1,13 @@
+title: Superdoccimo Projects
+description: 私のプロジェクト一覧
+url: "https://superdoccimo.github.io"
+baseurl: ""
+
+collections:
+  projects:
+    output: true
+
+# 他の設定項目があればここに記述
+
 plugins:
   - jekyll-sitemap
