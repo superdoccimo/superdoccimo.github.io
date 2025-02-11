@@ -1,11 +1,17 @@
 ---
 layout: project
-title: "WordPress URL 置換スクリプト"
-description: "WordPress データベース内の URL を効率的かつ安全に置換するツールです。シリアライズされたデータも正確に処理し、ドライランモードや並列処理、詳細なログ出力機能を備えています。WP-CLI が利用できない環境でも動作します。"
+title: "WordPress URL Replace Script"
+description: "A tool for efficiently replacing URLs in WordPress databases. It safely handles serialized data, offers a dry-run mode, parallel processing, and detailed logging."
 permalink: /wprep/
 github_url: "https://github.com/superdoccimo/wprep"
 ---
 
-WordPress のデータベース内にある旧URLを新URLに置換するためのスクリプトです。  
-シリアライズされたデータも正しく処理できるため、従来の手法では難しかった環境でも安全にURL置換が可能です。  
-また、ドライランモードや並列処理、詳細なログ出力機能により、実際の変更前に影響範囲を確認できる点も特徴です。
+This script provides an efficient and safe way to replace old URLs with new ones in WordPress databases. It correctly processes serialized data and includes features such as:
+
+- **URL Replacement:** Replaces old URLs with new ones in the database.
+- **Serialized Data Handling:** Ensures proper processing of serialized data.
+- **Dry-run Mode:** Allows you to preview changes before applying them.
+- **Parallel Processing:** Speeds up processing by handling multiple tables and columns concurrently.
+- **Detailed Logging:** Records the replacement progress and results for troubleshooting.
+
+Always remember to backup your database before running the script.
