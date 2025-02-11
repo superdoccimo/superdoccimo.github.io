@@ -2,7 +2,7 @@
 layout: project
 title: "Tick Data Saving Script"
 description: "A Python-based automation that processes Excel data to continuously save real-time stock tick data into both an Excel file and a database, while avoiding duplicate entries."
-permalink: /tickdata/
+permalink: /ayumi/
 github_url: "https://github.com/superdoccimo/ayumi"  # Replace with the actual repository URL if different.
 ---
 
