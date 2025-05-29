@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- wpbk リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/wpbk</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- 4000 リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/4000</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- notepc リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/notepc</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- wprep リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/wprep</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- VHDX リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/VHDX</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- audiocraftdocker リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/audiocraftdocker</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- rev リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/rev</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- ayumi リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/ayumi</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- autoffmpeg リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/autoffmpeg</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+</urlset>

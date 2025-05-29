@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- wpbk プロジェクト -->
+  <url>
+    <loc>https://superdoccimo.github.io/wpbk/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- 4000 プロジェクト -->
+  <url>
+    <loc>https://superdoccimo.github.io/4000/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- notepc プロジェクト -->
+  <url>
+    <loc>https://superdoccimo.github.io/notepc/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- wprep プロジェクト -->
+  <url>
+    <loc>https://superdoccimo.github.io/wprep/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- VHDX プロジェクト -->
+  <url>
+    <loc>https://superdoccimo.github.io/VHDX/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- audiocraftdocker プロジェクト -->
+  <url>
+    <loc>https://superdoccimo.github.io/audiocraftdocker/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- rev プロジェクト -->
+  <url>
+    <loc>https://superdoccimo.github.io/rev/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- ayumi プロジェクト -->
+  <url>
+    <loc>https://superdoccimo.github.io/ayumi/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- autoffmpeg プロジェクト -->
+  <url>
+    <loc>https://superdoccimo.github.io/autoffmpeg/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
