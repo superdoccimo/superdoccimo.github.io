@@ -6,6 +6,43 @@ permalink: /wpbk/
 github_url: "https://github.com/superdoccimo/wpbk"
 ---
 
+<!-- リッチリザルト用構造化データ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Simple WordPress Docker Environment",
+  "description": "Learn how to quickly deploy WordPress with Docker, including daily backups and persistent storage setup.",
+  "author": {
+    "@type": "Person",
+    "name": "Mamu Minokamo"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minokamo Project",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://superdoccimo.github.io/assets/logo.png"
+    }
+  },
+  "datePublished": "2024-09-19",
+  "url": "https://superdoccimo.github.io/wpbk/"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "DockerでWordPressを動かす方法",
+  "description": "Dockerと自動バックアップを使ってWordPressを運用する手順を解説しています。",
+  "thumbnailUrl": "https://i.ytimg.com/vi/MjQ9jPClsaY/maxresdefault.jpg",
+  "uploadDate": "2024-09-19",
+  "contentUrl": "https://youtu.be/MjQ9jPClsaY",
+  "embedUrl": "https://www.youtube.com/embed/MjQ9jPClsaY"
+}
+</script>
+
 ## Overview
 
 This project provides a simplified Docker setup for running WordPress alongside MySQL. It features automatic daily database backups, persistent storage for WordPress files and the database, and convenient environment variable management through a `.env` file.
@@ -23,3 +60,4 @@ This project provides a simplified Docker setup for running WordPress alongside 
 1. Clone the repository:
    ```bash
    git clone https://github.com/superdoccimo/wpbk.git
+    ```
