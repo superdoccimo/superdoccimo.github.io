@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: "Mamu Minokamo - Developer Portfolio" }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | default: 'Docker, WordPress, AI, Python開発者のポートフォリオ。実用的なオープンソースプロジェクトと技術記事を公開しています。' }}">
+  <meta name="keywords" content="{{ page.keywords | default: 'Docker,WordPress,AI,Python,VBA,株価データ,自動化,オープンソース,Mamu Minokamo' }}">
+  <meta name="author" content="Mamu Minokamo">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: 'Mamu Minokamo - Developer Portfolio' }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | default: 'Docker, WordPress, AI, Python開発者のポートフォリオ' }}">
+  <meta property="og:image" content="{{ '/assets/logo.png' | absolute_url }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mamu Minokamo Portfolio">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: 'Mamu Minokamo - Developer Portfolio' }}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description | default: 'Docker, WordPress, AI, Python開発者のポートフォリオ' }}">
+  <meta name="twitter:image" content="{{ '/assets/logo.png' | absolute_url }}">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ '/assets/logo.png' | relative_url }}">
+  
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="g9fJsz9TfgVsXUpNZvY3Lm5dz-feSSbTv5przopaBiA" />
   <meta name="yandex-verification" content="6108bd4e96c81ba8" />
-  <title>{{ page.title }}</title>
 
 {% if page.json_ld %}
   <script type="application/ld+json">
@@ -14,11 +41,14 @@
   </script>
 {% endif %}
 
-  <!-- CSSファイルの読み込み -->
+  <!-- CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  
+  <!-- Preload key resources -->
+  <link rel="preload" href="{{ '/assets/logo.png' | relative_url }}" as="image">
 </head>
 <body>
-  <!-- ナビゲーションバー（言語切替リンク付き） -->
+  <!-- Navigation -->
   <nav>
     <ul>
       <li><a href="{{ '/' | relative_url }}">English</a></li>
@@ -26,14 +56,14 @@
     </ul>
   </nav>
 
-  <!-- ページ固有のコンテンツ -->
-  <div class="content">
+  <!-- Main Content -->
+  <main class="content">
     {{ content }}
-  </div>
+  </main>
 
-  <!-- フッター -->
+  <!-- Footer -->
   <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} Superdoccimo. All rights reserved.</p>
+    <p>&copy; {{ site.time | date: "%Y" }} Mamu Minokamo. All rights reserved.</p>
   </footer>
 </body>
 </html>

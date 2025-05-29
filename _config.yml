@@ -1,13 +1,10 @@
-title: Superdoccimo Projects
-description: 私のプロジェクト一覧
+title: "Mamu Minokamo - Developer Portfolio"
+description: "Docker, WordPress, AI, Python開発者のポートフォリオ。実用的なオープンソースプロジェクトと技術記事を公開しています。"
 url: "https://superdoccimo.github.io"
-baseurl: ""
+author: "Mamu Minokamo"
+lang: "ja"
 
-collections:
-  projects:
-    output: true
-
-# 他の設定項目があればここに記述
-
+# SEO plugins
 plugins:
   - jekyll-sitemap
+  - jekyll-feed
