@@ -4,6 +4,10 @@ url: "https://superdoccimo.github.io"
 author: "Mamu Minokamo"
 lang: "ja"
 
+collections:
+  projects:
+    output: true
+
 # SEO plugins
 plugins:
   - jekyll-sitemap
