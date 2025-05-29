@@ -5,7 +5,6 @@ description: "A streamlined Docker environment for WordPress with automated dail
 permalink: /wpbk/
 github_url: "https://github.com/superdoccimo/wpbk"
 json_ld: >
-  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
