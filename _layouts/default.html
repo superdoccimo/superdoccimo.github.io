@@ -10,7 +10,7 @@
 
 {% if page.json_ld %}
   <script type="application/ld+json">
-  {{ page.json_ld | strip | strip_newlines | replace: '"', '\u0022' | replace: '\n', '' | raw }}
+  {{ page.json_ld | strip | raw }}
   </script>
 {% endif %}
 
