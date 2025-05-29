@@ -7,6 +7,11 @@
   <meta name="google-site-verification" content="g9fJsz9TfgVsXUpNZvY3Lm5dz-feSSbTv5przopaBiA" />
   <meta name="yandex-verification" content="6108bd4e96c81ba8" />
   <title>{{ page.title }}</title>
+
+    {% if page.json_ld %}
+    {{ page.json_ld | strip | strip_newlines | replace: '"', '&quot;' | replace: '\n', '' | raw }}
+  {% endif %}
+
   <!-- CSSファイルの読み込み -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
