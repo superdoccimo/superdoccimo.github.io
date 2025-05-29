@@ -1,9 +1,11 @@
+# Site settings
 title: "Mamu Minokamo - Developer Portfolio"
 description: "Docker, WordPress, AI, Python開発者のポートフォリオ。実用的なオープンソースプロジェクトと技術記事を公開しています。"
 url: "https://superdoccimo.github.io"
 author: "Mamu Minokamo"
 lang: "ja"
 
+# Collections - これが重要！
 collections:
   projects:
     output: true
@@ -12,3 +14,13 @@ collections:
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
