@@ -38,7 +38,6 @@ json_ld: >
       }
     ]
   }
-  </script>
 ---
 
 ## Overview
