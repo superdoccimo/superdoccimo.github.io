@@ -63,4 +63,11 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- msp プロジェクト -->
+  <url>
+    <loc>https://superdoccimo.github.io/msp/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
