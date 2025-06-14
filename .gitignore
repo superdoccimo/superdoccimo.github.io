@@ -1,0 +1,27 @@
+# Jekyll build output
+_site/
+
+# OS generated files
+.DS_Store
+
+# Gems and bundler directories
+*.gem
+.bundle/
+vendor/
+vendor/bundle/
+Gemfile.lock
+
+# Cache and temporary files
+.jekyll-cache/
+.sass-cache/
+.jekyll-metadata
+
+# Node and package artifacts
+node_modules/
+
+# Logs and temporary byproducts
+*.log
+tmp/
+
+# Editor swap files
+*.swp

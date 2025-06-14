@@ -29,3 +29,10 @@ This project provides a straightforward solution to deploy an Nginx reverse prox
    cd rev
    chmod +x init-letsencrypt.sh
    sudo ./init-letsencrypt.sh
+   ```
+
+3. **Start the Proxy:**
+   Launch the container to enable the reverse proxy service:
+   ```bash
+   docker compose up -d
+   ```

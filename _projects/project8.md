@@ -26,3 +26,8 @@ This project provides a PowerShell script that automates the entire FFmpeg insta
 2. Open PowerShell as Administrator and, if necessary, bypass the execution policy:
    ```powershell
    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+   ```
+3. Run the installer script:
+   ```powershell
+   .\install_ffmpeg.ps1
+   ```
