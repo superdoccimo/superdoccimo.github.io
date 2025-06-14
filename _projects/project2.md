@@ -4,6 +4,7 @@ title: "WordPress URL Replace Script"
 description: "A tool for efficiently replacing URLs in WordPress databases. It safely handles serialized data, offers a dry-run mode, parallel processing, and detailed logging."
 permalink: /wprep/
 github_url: "https://github.com/superdoccimo/wprep"
+image: /assets/logo.png
 ---
 
 This script provides an efficient and safe way to replace old URLs with new ones in WordPress databases. It correctly processes serialized data and includes features such as:

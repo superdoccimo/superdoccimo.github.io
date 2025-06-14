@@ -4,6 +4,7 @@ title: "AudioCraft Docker with CUDA Support"
 description: "Dockerfiles for running Meta's AudioCraft (MusicGen) with CUDA 12.4 and 12.1 support, featuring optimized dependency management, a Gradio web interface, and comprehensive documentation."
 permalink: /audiocraft/
 github_url: "https://github.com/superdoccimo/audiocraftdocker"
+image: /assets/logo.png
 ---
 
 This project provides Dockerfiles to run Meta's AudioCraft (MusicGen) with support for multiple CUDA versions, specifically CUDA 12.4 and CUDA 12.1. Developed in collaboration to extend the original CUDA 11.8 implementation, it offers:

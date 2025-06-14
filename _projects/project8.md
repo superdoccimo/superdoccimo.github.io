@@ -4,6 +4,7 @@ title: "FFmpeg Automatic Installation Script"
 description: "A PowerShell script that automates downloading, extracting, and installing FFmpeg on Windows, including environment variable setup and safe reinstallation."
 permalink: /autoffmpeg/
 github_url: "https://github.com/superdoccimo/autoffmpeg"
+image: /assets/logo.png
 ---
 
 This project provides a PowerShell script that automates the entire FFmpeg installation process on Windows systems. The script handles:

@@ -38,10 +38,40 @@ body {
   }
   
   /* フッター */
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Hero section */
+.hero {
+  padding: 2rem;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+/* Project list */
+.project-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Individual project card */
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 1rem;
+}
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 0.5rem;
+}
   

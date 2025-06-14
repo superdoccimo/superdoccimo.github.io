@@ -4,6 +4,7 @@ title: "TSE Stock Information VBA Macro"
 description: "An Excel VBA macro that automatically retrieves stock data for over 4000 companies listed on the Tokyo Stock Exchange, featuring asynchronous processing and optimized large-scale data handling."
 permalink: /4000/
 github_url: "https://github.com/superdoccimo/4000"
+image: /assets/logo.png
 ---
 
 This project provides an Excel VBA macro solution designed to automatically fetch comprehensive stock data—including current prices, stock names, and trading volumes—for over 4000 companies listed on the Tokyo Stock Exchange (TSE). Leveraging the code list provided by JPX, the macro efficiently processes large datasets by utilizing asynchronous processing and optimized looping techniques.

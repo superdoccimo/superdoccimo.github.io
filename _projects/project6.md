@@ -4,6 +4,7 @@ title: "Tick Data Saving Script"
 description: "A Python-based automation that processes Excel data to continuously save real-time stock tick data into both an Excel file and a database, while avoiding duplicate entries."
 permalink: /ayumi/
 github_url: "https://github.com/superdoccimo/ayumi"  # Replace with the actual repository URL if different.
+image: /assets/logo.png
 ---
 
 This project leverages Python to automate the processing of Excel data. The script reads data from a specified Excel file and automatically appends new information while avoiding duplicates. Two storage options are provided:

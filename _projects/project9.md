@@ -4,6 +4,7 @@ title: "WSL VHD Compact Utility"
 description: "Utility scripts to compact the WSL VHD/VHDX file, featuring automatic detection, safe operation, read-only attachment, and automated Diskpart integration."
 permalink: /vhdx/
 github_url: "https://github.com/superdoccimo/VHDX"
+image: /assets/logo.png
 ---
 
 This repository provides utility scripts to compact the WSL (Windows Subsystem for Linux) VHD/VHDX file, which can grow over time. Two versions are available:

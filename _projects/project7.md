@@ -4,6 +4,7 @@ title: "Nginx Reverse Proxy with Auto SSL"
 description: "A simple toolkit for setting up an Nginx reverse proxy with automatic SSL certificate management, featuring one-script setup, secure configuration, and automatic certificate renewal."
 permalink: /rev/
 github_url: "https://github.com/superdoccimo/rev"
+image: /assets/logo.png
 ---
 
 This project provides a straightforward solution to deploy an Nginx reverse proxy with automatic SSL certificate management using Let's Encrypt. The toolkit simplifies the setup process with a single script that configures your domain, email, and environment settings (staging or production).

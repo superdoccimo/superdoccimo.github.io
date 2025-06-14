@@ -5,7 +5,7 @@ lang: en
 ---
 
 <!-- 🔥 Hero セクション -->
-<section style="padding: 2rem; background-color: #f0f0f0;">
+<section class="hero">
   <h1>Welcome to Mamu Minokamo’s Projects</h1>
   <p>I create tools that automate finance, AI workflows, and server operations using Python, Docker, and Excel.</p>
   <p>View my work, tutorials, and open-source contributions below.</p>
@@ -14,9 +14,12 @@ lang: en
 <!-- 💼 プロジェクト一覧 -->
 <section>
   <h2>My Projects</h2>
-  <ul>
+  <ul class="project-list">
     {% for project in site.projects %}
-      <li>
+      <li class="project-card">
+        {% if project.image %}
+          <img src="{{ project.image }}" alt="{{ project.title }}">
+        {% endif %}
         <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
         <p>{{ project.description }}</p>
         {% if project.github_url %}

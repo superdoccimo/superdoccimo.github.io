@@ -4,6 +4,7 @@ title: "Simple WordPress Docker Environment"
 description: "A streamlined Docker environment for WordPress with automated daily backups and environment variable management."
 permalink: /wpbk/
 github_url: "https://github.com/superdoccimo/wpbk"
+image: /assets/logo.png
 json_ld: >
   {
     "@context": "https://schema.org",
