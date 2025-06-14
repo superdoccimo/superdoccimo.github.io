@@ -377,10 +377,15 @@
             <div class="logo">Superdoccimo</div>
             <div class="nav-right">
                 <div class="nav-links">
-                    <a href="#home">Home</a>
-                    <a href="#projects">Projects</a>
+                    <a href="#home" data-en="Home" data-ja="ホーム">Home</a>
+                    <a href="#projects" data-en="Projects" data-ja="プロジェクト">Projects</a>
                     <a href="https://github.com/superdoccimo">GitHub</a>
+                    <a href="https://www.youtube.com/@doccimo">YouTube</a>
                     <a href="https://minokamo.tokyo/">Blog</a>
+                </div>
+                <div class="language-toggle" onclick="toggleLanguage()">
+                    <span class="language-flag" id="languageFlag">🇺🇸</span>
+                    <span class="language-text" id="languageText">EN</span>
                 </div>
             </div>
         </div>
@@ -390,16 +395,78 @@
     <main>
         <div class="hero" id="home">
             <div class="hero-content">
-                {{ content }}
+                <!-- 英語版 -->
+                <div id="hero-en">
+                    {{ content }}
+                </div>
+                <!-- 日本語版 -->
+                <div id="hero-ja" class="hidden">
+                    <h1>Mamu Minokamoのプロジェクトへようこそ</h1>
+                    <p>Python、Docker、Excelを使用して金融、AIワークフロー、サーバー運用を自動化するツールを作成しています。</p>
+                    <p>以下で私の作品、チュートリアル、オープンソースへの貢献をご覧ください。</p>
+                </div>
             </div>
         </div>
 
         <div class="projects" id="projects">
-            <!-- Jekyll content will be inserted here -->
+            <!-- 英語版プロジェクト -->
+            <div id="projects-en">
+                <!-- Jekyll content will be inserted here -->
+            </div>
+            <!-- 日本語版プロジェクト -->
+            <div id="projects-ja" class="hidden">
+                <h2 class="section-title">注目プロジェクト</h2>
+                <!-- 日本語版のプロジェクト表示はJekyllで動的生成 -->
+            </div>
         </div>
     </main>
 
     <script>
+        // 言語切り替え機能
+        function toggleLanguage() {
+            const flag = document.getElementById('languageFlag');
+            const text = document.getElementById('languageText');
+            const heroEn = document.getElementById('hero-en');
+            const heroJa = document.getElementById('hero-ja');
+            const projectsEn = document.getElementById('projects-en');
+            const projectsJa = document.getElementById('projects-ja');
+            const navLinks = document.querySelectorAll('.nav-links a[data-en]');
+            
+            if (flag.textContent === '🇺🇸') {
+                // 日本語に切り替え
+                flag.textContent = '🇯🇵';
+                text.textContent = 'JA';
+                heroEn.classList.add('hidden');
+                heroJa.classList.remove('hidden');
+                projectsEn.classList.add('hidden');
+                projectsJa.classList.remove('hidden');
+                document.documentElement.lang = 'ja';
+                
+                // ナビリンクを日本語に
+                navLinks.forEach(link => {
+                    if (link.dataset.ja) {
+                        link.textContent = link.dataset.ja;
+                    }
+                });
+            } else {
+                // 英語に切り替え
+                flag.textContent = '🇺🇸';
+                text.textContent = 'EN';
+                heroEn.classList.remove('hidden');
+                heroJa.classList.add('hidden');
+                projectsEn.classList.remove('hidden');
+                projectsJa.classList.add('hidden');
+                document.documentElement.lang = 'en';
+                
+                // ナビリンクを英語に
+                navLinks.forEach(link => {
+                    if (link.dataset.en) {
+                        link.textContent = link.dataset.en;
+                    }
+                });
+            }
+        }
+
         // スクロール進行状況
         window.addEventListener('scroll', () => {
             const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
