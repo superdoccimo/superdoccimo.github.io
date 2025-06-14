@@ -427,89 +427,108 @@
                     {% endfor %}
                 </ul>
             </div>
+            
             <!-- 日本語版プロジェクト -->
             <div id="projects-ja" class="hidden">
                 <h2 class="section-title">注目プロジェクト</h2>
                 <ul class="project-list">
-                    {% for project in site.projects %}
-                      <li class="project-card">
-                        {% if project.image %}
-                          <img src="{{ project.image }}" alt="{{ project.title_ja | default: project.title }}">
-                        {% endif %}
-                        <h3><a href="{{ project.url | relative_url }}">
-                          {% if project.title_ja %}
-                            {{ project.title_ja }}
-                          {% else %}
-                            {% case project.title %}
-                              {% when 'Minokamo Secure Protocol (MSP)' %}
-                                美濃上暗号通信プロトコル (MSP)
-                              {% when 'Simple WordPress Docker Environment' %}
-                                WordPress Docker環境
-                              {% when 'WordPress URL Replace Script' %}
-                                WordPress URL置換スクリプト
-                              {% when 'AudioCraft Docker with CUDA Support' %}
-                                AudioCraft Docker CUDA対応
-                              {% when 'Laptop DHCP and PXE Server' %}
-                                ラップトップ DHCP & PXE サーバー
-                              {% when 'TSE Stock Information VBA Macro' %}
-                                東証株価データ VBAマクロ
-                              {% when 'Tick Data Saving Script' %}
-                                リアルタイムティックデータ保存
-                              {% when 'Nginx Reverse Proxy with Auto SSL' %}
-                                Nginx 自動SSL リバースプロキシ
-                              {% when 'FFmpeg Automatic Installation Script' %}
-                                FFmpeg 自動インストールスクリプト
-                              {% when 'WSL VHD Compact Utility' %}
-                                WSL VHD圧縮ユーティリティ
-                              {% else %}
-                                {{ project.title }}
-                            {% endcase %}
-                          {% endif %}
-                        </a></h3>
-                        <p>
-                          {% if project.description_ja %}
-                            {{ project.description_ja }}
-                          {% else %}
-                            {% case project.title %}
-                              {% when 'Minokamo Secure Protocol (MSP)' %}
-                                CRC検証、構造化バイナリパケット、AES暗号化サポートを備えた最小限の教育的TCPプロトコル。
-                              {% when 'Simple WordPress Docker Environment' %}
-                                自動バックアップとenv管理を備えた効率的なWordPress開発環境。
-                              {% when 'WordPress URL Replace Script' %}
-                                シリアライズされたデータを安全に処理し、並列処理とドライランモードを備えたURL置換ツール。
-                              {% when 'AudioCraft Docker with CUDA Support' %}
-                                Meta's AudioCraft (MusicGen) をCUDA対応でDockerize。Gradio WebUIとパフォーマンス最適化。
-                              {% when 'Laptop DHCP and PXE Server' %}
-                                ノートPCをDHCP・PXEサーバーに変換。Wi-Fi/有線両対応でネットワークブート環境を構築。
-                              {% when 'TSE Stock Information VBA Macro' %}
-                                東証4000社超の株価データを自動取得するExcel VBAマクロ。非同期処理で大規模データを効率処理。
-                              {% when 'Tick Data Saving Script' %}
-                                Excelデータを処理してリアルタイム株価ティックデータを継続保存。重複排除機能付き。
-                              {% when 'Nginx Reverse Proxy with Auto SSL' %}
-                                自動SSL証明書管理機能付きNginxリバースプロキシ。ワンスクリプトセットアップと自動更新。
-                              {% when 'FFmpeg Automatic Installation Script' %}
-                                Windows向けFFmpeg自動インストールスクリプト。環境変数設定と安全な再インストール機能。
-                              {% when 'WSL VHD Compact Utility' %}
-                                WSL VHD/VHDXファイル圧縮ユーティリティ。自動検出、安全動作、Diskpart統合による最適化。
-                              {% else %}
-                                {{ project.description }}
-                            {% endcase %}
-                          {% endif %}
-                        </p>
-                        {% if project.github_url %}
-                          <p><a href="{{ project.github_url }}">GitHubリポジトリを見る →</a></p>
-                        {% endif %}
-                      </li>
-                    {% endfor %}
+                    <!-- 日本語版はJavaScriptで動的生成 -->
                 </ul>
             </div>
         </div>
     </main>
 
     <script>
+        // 日本語プロジェクトデータ
+        const projectTranslations = {
+            'Minokamo Secure Protocol (MSP)': {
+                title: '美濃上暗号通信プロトコル (MSP)',
+                description: 'CRC検証、構造化バイナリパケット、AES暗号化サポートを備えた最小限の教育的TCPプロトコル。'
+            },
+            'Simple WordPress Docker Environment': {
+                title: 'WordPress Docker環境',
+                description: '自動バックアップとenv管理を備えた効率的なWordPress開発環境。'
+            },
+            'WordPress URL Replace Script': {
+                title: 'WordPress URL置換スクリプト',
+                description: 'シリアライズされたデータを安全に処理し、並列処理とドライランモードを備えたURL置換ツール。'
+            },
+            'AudioCraft Docker with CUDA Support': {
+                title: 'AudioCraft Docker CUDA対応',
+                description: "Meta's AudioCraft (MusicGen) をCUDA対応でDockerize。Gradio WebUIとパフォーマンス最適化。"
+            },
+            'Laptop DHCP and PXE Server': {
+                title: 'ラップトップ DHCP & PXE サーバー',
+                description: 'ノートPCをDHCP・PXEサーバーに変換。Wi-Fi/有線両対応でネットワークブート環境を構築。'
+            },
+            'TSE Stock Information VBA Macro': {
+                title: '東証株価データ VBAマクロ',
+                description: '東証4000社超の株価データを自動取得するExcel VBAマクロ。非同期処理で大規模データを効率処理。'
+            },
+            'Tick Data Saving Script': {
+                title: 'リアルタイムティックデータ保存',
+                description: 'Excelデータを処理してリアルタイム株価ティックデータを継続保存。重複排除機能付き。'
+            },
+            'Nginx Reverse Proxy with Auto SSL': {
+                title: 'Nginx 自動SSL リバースプロキシ',
+                description: '自動SSL証明書管理機能付きNginxリバースプロキシ。ワンスクリプトセットアップと自動更新。'
+            },
+            'FFmpeg Automatic Installation Script': {
+                title: 'FFmpeg 自動インストールスクリプト',
+                description: 'Windows向けFFmpeg自動インストールスクリプト。環境変数設定と安全な再インストール機能。'
+            },
+            'WSL VHD Compact Utility': {
+                title: 'WSL VHD圧縮ユーティリティ',
+                description: 'WSL VHD/VHDXファイル圧縮ユーティリティ。自動検出、安全動作、Diskpart統合による最適化。'
+            }
+        };
+
+        // 日本語プロジェクトリストを生成
+        function generateJapaneseProjects() {
+            const englishProjects = document.querySelectorAll('#projects-en .project-card');
+            const japaneseContainer = document.querySelector('#projects-ja .project-list');
+            
+            if (!japaneseContainer) return;
+            
+            japaneseContainer.innerHTML = '';
+            
+            englishProjects.forEach(card => {
+                const englishTitle = card.querySelector('h3 a').textContent.trim();
+                const englishDescription = card.querySelector('p:not(:has(a))').textContent.trim();
+                const githubLink = card.querySelector('a[href*="github"]');
+                const image = card.querySelector('img');
+                const projectUrl = card.querySelector('h3 a').getAttribute('href');
+                
+                const translation = projectTranslations[englishTitle];
+                const japaneseTitle = translation ? translation.title : englishTitle;
+                const japaneseDescription = translation ? translation.description : englishDescription;
+                
+                const japaneseCard = document.createElement('li');
+                japaneseCard.className = 'project-card';
+                
+                let imageHtml = '';
+                if (image) {
+                    imageHtml = `<img src="${image.src}" alt="${japaneseTitle}">`;
+                }
+                
+                let githubHtml = '';
+                if (githubLink) {
+                    githubHtml = `<p><a href="${githubLink.href}">GitHubリポジトリを見る →</a></p>`;
+                }
+                
+                japaneseCard.innerHTML = `
+                    ${imageHtml}
+                    <h3><a href="${projectUrl}">${japaneseTitle}</a></h3>
+                    <p>${japaneseDescription}</p>
+                    ${githubHtml}
+                `;
+                
+                japaneseContainer.appendChild(japaneseCard);
+            });
+        }
+
         // 言語切り替え機能
-        let currentLanguage =
-            document.documentElement.lang === 'ja' ? 'ja' : 'en';
+        let currentLanguage = 'en'; // 初期状態を明確に設定
         
         function toggleLanguage() {
             const flag = document.getElementById('languageFlag');
@@ -563,30 +582,21 @@
             }
         }
         
-        // ページ読み込み時に現在の言語に合わせて表示を設定
+        // ページ読み込み時に初期状態を設定
         document.addEventListener('DOMContentLoaded', function() {
             const heroEn = document.getElementById('hero-en');
             const heroJa = document.getElementById('hero-ja');
             const projectsEn = document.getElementById('projects-en');
             const projectsJa = document.getElementById('projects-ja');
-            const flag = document.getElementById('languageFlag');
-            const text = document.getElementById('languageText');
-
-            if (currentLanguage === 'ja') {
-                heroEn.classList.add('hidden');
-                heroJa.classList.remove('hidden');
-                projectsEn.classList.add('hidden');
-                projectsJa.classList.remove('hidden');
-                flag.textContent = '🇯🇵';
-                text.textContent = 'JA';
-            } else {
-                heroEn.classList.remove('hidden');
-                heroJa.classList.add('hidden');
-                projectsEn.classList.remove('hidden');
-                projectsJa.classList.add('hidden');
-                flag.textContent = '🇺🇸';
-                text.textContent = 'EN';
-            }
+            
+            // 日本語プロジェクトを生成
+            generateJapaneseProjects();
+            
+            // 初期状態は英語表示
+            heroEn.classList.remove('hidden');
+            heroJa.classList.add('hidden');
+            projectsEn.classList.remove('hidden');
+            projectsJa.classList.add('hidden');
         });
 
         // スクロール進行状況
