@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/impact.css' | relative_url }}">
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <nav id="main-nav">
+    <a href="{{ '/' | relative_url }}" data-en="Home" data-ja="ホーム">Home</a>
+    <a href="#projects" data-en="Projects" data-ja="プロジェクト">Projects</a>
+    <button id="lang-toggle" onclick="toggleLanguage()" data-en="日本語" data-ja="English">日本語</button>
+  </nav>
+  <div class="background">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
+  <main>
+    {{ content }}
+  </main>
+  <script>
+    function setLanguage(lang){
+      document.documentElement.lang = lang;
+      var en = lang === 'en';
+      var heroEn = document.getElementById('hero-en');
+      var heroJa = document.getElementById('hero-ja');
+      var projEn = document.getElementById('projects-en');
+      var projJa = document.getElementById('projects-ja');
+      if(heroEn) heroEn.style.display = en ? '' : 'none';
+      if(heroJa) heroJa.style.display = en ? 'none' : '';
+      if(projEn) projEn.style.display = en ? '' : 'none';
+      if(projJa) projJa.style.display = en ? 'none' : '';
+      document.querySelectorAll('[data-en]').forEach(function(el){
+        el.textContent = en ? el.dataset.en : el.dataset.ja;
+      });
+    }
+    function toggleLanguage(){
+      setLanguage(document.documentElement.lang === 'en' ? 'ja' : 'en');
+    }
+    function updateScrollIndicator(){
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var percent = (window.scrollY / docHeight) * 100;
+      document.getElementById('progress-bar').style.width = percent + '%';
+    }
+    document.addEventListener('scroll', updateScrollIndicator);
+    document.addEventListener('DOMContentLoaded', function(){
+      setLanguage(document.documentElement.lang);
+      updateScrollIndicator();
+    });
+  </script>
+</body>
+</html>
