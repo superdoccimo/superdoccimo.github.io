@@ -2,6 +2,7 @@
 title: "Mamu Minokamo - Developer Portfolio"
 description: "Docker, WordPress, AI, Python開発者のポートフォリオ。実用的なオープンソースプロジェクトと技術記事を公開しています。"
 url: "https://superdoccimo.github.io"
+baseurl: ""
 author: "Mamu Minokamo"
 lang: "ja"
 
@@ -9,18 +10,44 @@ lang: "ja"
 collections:
   projects:
     output: true
+    permalink: /:collection/:name/
 
-# SEO plugins
+# GitHub Pages対応プラグイン（これらのみサポートされています）
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Jekyll 4対応設定
+safe: false
+incremental: false
 
 # Exclude files
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Include files
+include:
+  - _pages
+
+# SEO設定（jekyll-seo-tag用）
+twitter:
+  username: doccimo
+  card: summary
+github:
+  username: superdoccimo
+
+# Feed設定（jekyll-feed用）
+feed:
+  path: atom.xml
