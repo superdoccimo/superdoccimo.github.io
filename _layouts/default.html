@@ -1,22 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en' }}">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title | default: site.title }}</title>
-    <meta name="description" content="{{ page.description | default: site.description }}">
-    
-    <!-- SEO Meta Tags -->
-    <meta property="og:title" content="{{ page.title | default: site.title }}">
-    <meta property="og:description" content="{{ page.description | default: site.description }}">
-    <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ page.title | default: site.title }}">
-    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <title>Superdoccimo - Projects</title>
+    <meta name="description" content="Tools to automate finance, AI workflows, and server operations">
     
     <style>
         * {
@@ -157,6 +145,7 @@
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
+            user-select: none;
         }
 
         .language-toggle:hover {
@@ -408,13 +397,13 @@
             <div class="logo">Superdoccimo</div>
             <div class="nav-right">
                 <div class="nav-links">
-                    <a href="#home" data-en="Home" data-ja="ホーム">Home</a>
-                    <a href="#projects" data-en="Projects" data-ja="プロジェクト">Projects</a>
+                    <a href="#home" class="nav-link-home">Home</a>
+                    <a href="#projects" class="nav-link-projects">Projects</a>
                     <a href="https://github.com/superdoccimo">GitHub</a>
                     <a href="https://www.youtube.com/@doccimo">YouTube</a>
                     <a href="https://minokamo.tokyo/">Blog</a>
                 </div>
-                <div class="language-toggle" onclick="toggleLanguage()">
+                <div class="language-toggle" id="languageToggle">
                     <span class="language-flag" id="languageFlag">🇺🇸</span>
                     <span class="language-text" id="languageText">EN</span>
                 </div>
@@ -445,7 +434,7 @@
             <!-- 英語版プロジェクト -->
             <div id="projects-en">
                 <h2 class="section-title">My Projects</h2>
-                <ul class="project-list">
+                <ul class="project-list" id="project-list-en">
                     <!-- JavaScriptで動的生成 -->
                 </ul>
             </div>
@@ -453,7 +442,7 @@
             <!-- 日本語版プロジェクト -->
             <div id="projects-ja" class="hidden">
                 <h2 class="section-title">注目プロジェクト</h2>
-                <ul class="project-list">
+                <ul class="project-list" id="project-list-ja">
                     <!-- JavaScriptで動的生成 -->
                 </ul>
             </div>
@@ -461,6 +450,9 @@
     </main>
 
     <script>
+        // デバッグ用ログ
+        console.log('Script starting...');
+
         // 日本語プロジェクトデータ
         const projectTranslations = {
             'Minokamo Secure Protocol (MSP)': {
@@ -505,7 +497,7 @@
             }
         };
 
-        // プロジェクトデータ（直接定義）
+        // プロジェクトデータ
         const projectsData = [
             {
                 title: "Minokamo Secure Protocol (MSP)",
@@ -579,29 +571,27 @@
             }
         ];
 
-        // プロジェクトデータを取得
-        function getProjectsData() {
-            console.log('Using static projects data:', projectsData);
-            return projectsData;
-        }
-
         // 英語プロジェクトリストを生成
         function generateEnglishProjects() {
-            const projects = getProjectsData();
-            const container = document.querySelector('#projects-en .project-list');
+            console.log('Generating English projects...');
+            const container = document.getElementById('project-list-en');
             
-            if (!container) return;
+            if (!container) {
+                console.error('English project container not found!');
+                return;
+            }
             
             container.innerHTML = '';
             
-            projects.forEach(project => {
+            projectsData.forEach(project => {
                 const card = document.createElement('li');
                 card.className = 'project-card';
                 
+                // 画像は一旦非表示にする（存在しない可能性があるため）
                 let imageHtml = '';
-                if (project.image) {
-                    imageHtml = `<img src="${project.image}" alt="${project.title}" onerror="this.style.display='none'">`;
-                }
+                // if (project.image) {
+                //     imageHtml = `<img src="${project.image}" alt="${project.title}" onerror="this.style.display='none'">`;
+                // }
                 
                 let githubHtml = '';
                 if (project.github_url) {
@@ -617,18 +607,23 @@
                 
                 container.appendChild(card);
             });
+            
+            console.log('English projects generated:', container.children.length);
         }
 
         // 日本語プロジェクトリストを生成
         function generateJapaneseProjects() {
-            const projects = getProjectsData();
-            const container = document.querySelector('#projects-ja .project-list');
+            console.log('Generating Japanese projects...');
+            const container = document.getElementById('project-list-ja');
             
-            if (!container) return;
+            if (!container) {
+                console.error('Japanese project container not found!');
+                return;
+            }
             
             container.innerHTML = '';
             
-            projects.forEach(project => {
+            projectsData.forEach(project => {
                 const translation = projectTranslations[project.title];
                 const japaneseTitle = translation ? translation.title : project.title;
                 const japaneseDescription = translation ? translation.description : project.description;
@@ -636,10 +631,11 @@
                 const card = document.createElement('li');
                 card.className = 'project-card';
                 
+                // 画像は一旦非表示にする
                 let imageHtml = '';
-                if (project.image) {
-                    imageHtml = `<img src="${project.image}" alt="${japaneseTitle}" onerror="this.style.display='none'">`;
-                }
+                // if (project.image) {
+                //     imageHtml = `<img src="${project.image}" alt="${japaneseTitle}" onerror="this.style.display='none'">`;
+                // }
                 
                 let githubHtml = '';
                 if (project.github_url) {
@@ -655,19 +651,26 @@
                 
                 container.appendChild(card);
             });
+            
+            console.log('Japanese projects generated:', container.children.length);
         }
 
         // 言語切り替え機能
-        let currentLanguage = 'en'; // 初期状態を明確に設定
+        let currentLanguage = 'en';
         
         function toggleLanguage() {
+            console.log('Toggling language from:', currentLanguage);
+            
             const flag = document.getElementById('languageFlag');
             const text = document.getElementById('languageText');
             const heroEn = document.getElementById('hero-en');
             const heroJa = document.getElementById('hero-ja');
             const projectsEn = document.getElementById('projects-en');
             const projectsJa = document.getElementById('projects-ja');
-            const navLinks = document.querySelectorAll('.nav-links a[data-en]');
+            
+            // ナビゲーションリンクの取得方法を変更
+            const homeLink = document.querySelector('.nav-link-home');
+            const projectsLink = document.querySelector('.nav-link-projects');
             
             if (currentLanguage === 'en') {
                 // 日本語に切り替え
@@ -684,11 +687,8 @@
                 document.documentElement.lang = 'ja';
                 
                 // ナビリンクを日本語に
-                navLinks.forEach(link => {
-                    if (link.dataset.ja) {
-                        link.textContent = link.dataset.ja;
-                    }
-                });
+                if (homeLink) homeLink.textContent = 'ホーム';
+                if (projectsLink) projectsLink.textContent = 'プロジェクト';
             } else {
                 // 英語に切り替え
                 currentLanguage = 'en';
@@ -704,47 +704,61 @@
                 document.documentElement.lang = 'en';
                 
                 // ナビリンクを英語に
-                navLinks.forEach(link => {
-                    if (link.dataset.en) {
-                        link.textContent = link.dataset.en;
-                    }
-                });
+                if (homeLink) homeLink.textContent = 'Home';
+                if (projectsLink) projectsLink.textContent = 'Projects';
             }
+            
+            console.log('Language toggled to:', currentLanguage);
         }
         
-        // ページ読み込み時に初期状態を設定
+        // イベントリスナーを追加
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing...');
+            
+            // プロジェクトを生成
+            generateEnglishProjects();
+            generateJapaneseProjects();
+            
+            // 言語切り替えボタンにイベントリスナーを追加
+            const toggleButton = document.getElementById('languageToggle');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', toggleLanguage);
+                console.log('Language toggle button listener added');
+            } else {
+                console.error('Language toggle button not found!');
+            }
+            
+            // 初期状態の確認
             const heroEn = document.getElementById('hero-en');
             const heroJa = document.getElementById('hero-ja');
             const projectsEn = document.getElementById('projects-en');
             const projectsJa = document.getElementById('projects-ja');
             
-            // 両方の言語のプロジェクトを生成
-            generateEnglishProjects();
-            generateJapaneseProjects();
-            
-            // 初期状態は英語表示
-            heroEn.classList.remove('hidden');
-            heroJa.classList.add('hidden');
-            projectsEn.classList.remove('hidden');
-            projectsJa.classList.add('hidden');
-            
-            console.log('Projects generated successfully'); // デバッグ用
+            console.log('Initial state check:');
+            console.log('Hero EN visible:', !heroEn.classList.contains('hidden'));
+            console.log('Hero JA visible:', !heroJa.classList.contains('hidden'));
+            console.log('Projects EN visible:', !projectsEn.classList.contains('hidden'));
+            console.log('Projects JA visible:', !projectsJa.classList.contains('hidden'));
         });
 
         // スクロール進行状況
         window.addEventListener('scroll', () => {
             const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            document.getElementById('scrollProgress').style.width = scrolled + '%';
+            const scrollProgress = document.getElementById('scrollProgress');
+            if (scrollProgress) {
+                scrollProgress.style.width = scrolled + '%';
+            }
         });
 
         // ナビゲーションのスクロール効果
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            if (navbar) {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
             }
         });
 
@@ -762,22 +776,6 @@
             });
         });
 
-        // プロジェクトカードのホバー効果
-        document.addEventListener('DOMContentLoaded', function() {
-            // 動的に生成されるプロジェクトカードに対応
-            document.addEventListener('mouseenter', function(e) {
-                if (e.target.classList.contains('project-card')) {
-                    e.target.style.transform = 'translateY(-10px) scale(1.02)';
-                }
-            }, true);
-            
-            document.addEventListener('mouseleave', function(e) {
-                if (e.target.classList.contains('project-card')) {
-                    e.target.style.transform = 'translateY(0) scale(1)';
-                }
-            }, true);
-        });
-
         // パララックス効果
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
@@ -788,3 +786,6 @@
                 shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
             });
         });
+    </script>
+</body>
+</html>
