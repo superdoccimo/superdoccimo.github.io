@@ -508,7 +508,8 @@
 
     <script>
         // 言語切り替え機能
-        let currentLanguage = 'en'; // 初期状態を明確に設定
+        let currentLanguage =
+            document.documentElement.lang === 'ja' ? 'ja' : 'en';
         
         function toggleLanguage() {
             const flag = document.getElementById('languageFlag');
@@ -562,18 +563,30 @@
             }
         }
         
-        // ページ読み込み時に初期状態を設定
+        // ページ読み込み時に現在の言語に合わせて表示を設定
         document.addEventListener('DOMContentLoaded', function() {
             const heroEn = document.getElementById('hero-en');
             const heroJa = document.getElementById('hero-ja');
             const projectsEn = document.getElementById('projects-en');
             const projectsJa = document.getElementById('projects-ja');
-            
-            // 初期状態は英語表示
-            heroEn.classList.remove('hidden');
-            heroJa.classList.add('hidden');
-            projectsEn.classList.remove('hidden');
-            projectsJa.classList.add('hidden');
+            const flag = document.getElementById('languageFlag');
+            const text = document.getElementById('languageText');
+
+            if (currentLanguage === 'ja') {
+                heroEn.classList.add('hidden');
+                heroJa.classList.remove('hidden');
+                projectsEn.classList.add('hidden');
+                projectsJa.classList.remove('hidden');
+                flag.textContent = '🇯🇵';
+                text.textContent = 'JA';
+            } else {
+                heroEn.classList.remove('hidden');
+                heroJa.classList.add('hidden');
+                projectsEn.classList.remove('hidden');
+                projectsJa.classList.add('hidden');
+                flag.textContent = '🇺🇸';
+                text.textContent = 'EN';
+            }
         });
 
         // スクロール進行状況
