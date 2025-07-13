@@ -1,7 +1,9 @@
 ---
 layout: project
-title: "Xserver無料VPS自動更新スクリプト"
-description: "Xserver無料VPSの「2日ごと手動更新」を自動化し、永続利用を可能にするPythonスクリプトです。"
+title: "Xserver Free VPS Auto-Renewal Script"
+title_ja: "Xserver無料VPS自動更新スクリプト"
+description: "Automates the manual renewal process of Xserver's free VPS every 2 days using Selenium browser automation, enabling permanent usage."
+description_ja: "Xserver無料VPSの「2日ごと手動更新」を自動化し、永続利用を可能にするPythonスクリプトです。"
 permalink: /xservervps/
 github_url: "https://github.com/superdoccimo/xservervps"
 image: /assets/logo.png
