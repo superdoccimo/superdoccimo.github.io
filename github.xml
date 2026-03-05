@@ -70,4 +70,39 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+    <!-- modern-serial-communication リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/modern-serial-communication</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- safe-ops-agent リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/safe-ops-agent</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- figma-mcp-free リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/figma-mcp-free</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- gemini-72h-visibility リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/gemini-72h-visibility</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- starter リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/starter</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>
