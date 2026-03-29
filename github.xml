@@ -112,4 +112,18 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+    <!-- discord-openclaw-relay リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/discord-openclaw-relay</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- taskbar-click-fix リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/taskbar-click-fix</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>
