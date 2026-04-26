@@ -126,4 +126,11 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+    <!-- koelab リポジトリ -->
+    <url>
+        <loc>https://github.com/superdoccimo/koelab</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>
